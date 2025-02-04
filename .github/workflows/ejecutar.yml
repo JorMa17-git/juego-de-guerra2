@@ -1,12 +1,12 @@
-name: Ejecutar Bot cada hora
+name: Ejecutar Bot desde 1 AM hasta 7 AM
 on:
   schedule:
-    - cron: "0 * * * *"   # Se ejecuta cada hora (minuto 0)
-  workflow_dispatch:      # Permite ejecución manual desde la pestaña "Actions"
+    - cron: "0 6-11/1 * * *"  # Inicia a las 6:00 UTC (1:00 AM COL) y cada 1 hora
+  workflow_dispatch:           # Permite ejecución manual desde "Actions"
 
 jobs:
   run-bot:
-    runs-on: ubuntu-latest  # Sistema operativo base
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
@@ -21,3 +21,4 @@ jobs:
 
       - name: Ejecutar el script (con pantalla virtual)
         run: xvfb-run -a python3 tu_script.py  # xvfb simula una interfaz gráfica
+
