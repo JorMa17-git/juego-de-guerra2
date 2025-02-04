@@ -1,7 +1,7 @@
 name: Ejecutar Bot desde 1 AM hasta 7 AM
 on:
   schedule:
-    - cron: "0 6-11/1 * * *"  # Inicia a las 6:00 UTC (1:00 AM COL) y cada 1 hora
+    - cron: "40 5-21 * * *"  # Inicia a las 6:00 UTC (1:00 AM COL) y cada 1 hora
   workflow_dispatch:           # Permite ejecución manual desde "Actions"
 
 jobs:
